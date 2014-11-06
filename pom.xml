@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>hsiao</groupId>
+  <artifactId>spring4hibernate4</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>spring4hibernate4</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+	
+  <build>
+    <finalName>spring4hibernate4</finalName> 
+    <defaultGoal>clean package</defaultGoal>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-data-jpa</artifactId>
+    	<version>1.1.8.RELEASE</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.hibernate</groupId>
+    	<artifactId>hibernate-core</artifactId>
+    	<version>4.3.6.Final</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-simple</artifactId>
+    	<version>1.7.7</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.javassist</groupId>
+    	<artifactId>javassist</artifactId>
+    	<version>3.16.1-GA</version>
+    </dependency>
+     <dependency>
+  	  <groupId>microsoft</groupId>
+	  <artifactId>sqljdbc</artifactId>
+	  <version>1.0.2531</version>
+  	</dependency>
+     <dependency>
+     	<groupId>c3p0</groupId>
+     	<artifactId>c3p0</artifactId>
+     	<version>0.9.1.2</version>
+     </dependency>
+  </dependencies>
+</project>
