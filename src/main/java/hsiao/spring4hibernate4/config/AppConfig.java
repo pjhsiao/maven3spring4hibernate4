@@ -5,19 +5,14 @@ import hsiao.spring4hibernate4.dao.IPersonDao;
 import hsiao.spring4hibernate4.dao.impl.PersonDao;
 import hsiao.spring4hibernate4.entity.Person;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
 
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
-import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.concurrent.ConcurrentMapCache;
-import org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean;
 import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -74,6 +69,7 @@ public class AppConfig {
 	}
 	
 	/**
+	 * To enable @AspectJ support with Java @Configuration add the @EnableAspectJAutoProxy annotation:
 	 * Aspect Bean
 	 * @return
 	 */

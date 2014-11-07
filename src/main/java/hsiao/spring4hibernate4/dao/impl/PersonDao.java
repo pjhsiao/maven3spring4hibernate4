@@ -24,8 +24,8 @@ public class PersonDao implements IPersonDao{
 			hibernateTemplate.save(person);
 		}
 		@Override
-		@Transactional(readOnly=true)
 		@Cacheable("persons")
+		@Transactional(readOnly=true)
 		public Person findByID(Integer id) {
 			List persons =hibernateTemplate.find("from Person p where p.id=?", new Object[]{id});
 			if(persons.isEmpty()){
@@ -35,8 +35,8 @@ public class PersonDao implements IPersonDao{
 			}
 		}
 		@Override
+		@Cacheable("persons")
 		@Transactional(readOnly=true)
-//		@Cacheable("persons")
 		public List<Person> findByAll() {
 			return (List<Person>) hibernateTemplate.find("from Person p ", null);
 		}
