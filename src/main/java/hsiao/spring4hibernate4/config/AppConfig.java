@@ -55,7 +55,7 @@ public class AppConfig {
 		ComboPooledDataSource dataSource = new ComboPooledDataSource(); 
 		try {
 		    dataSource.setDriverClass("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-		    dataSource.setJdbcUrl("jdbc:sqlserver://127.0.0.1:1433;databasename=test");
+		    dataSource.setJdbcUrl("jdbc:sqlserver://140.124.191.176:1433;databasename=test");
 		    dataSource.setUser("test");
 		    dataSource.setPassword("test1234");
 		} catch (Exception e) {

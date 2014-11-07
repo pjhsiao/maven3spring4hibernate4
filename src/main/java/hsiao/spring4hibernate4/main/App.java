@@ -26,6 +26,9 @@ public class App{
 //   		System.out.println(person.getId());
 //   	  	System.out.println(person.getName());
    	  	
+   	  /**
+   	   * test spring cache
+   	   */
 	   	  for (int i = 0; i < 2	; i++) {
 	   		for(Person person: pdao.findByAll()){
 		  			System.out.println(person.getName());
@@ -33,5 +36,18 @@ public class App{
 	   		System.out.println("---------------------------");
 	   	  }
 	   	  
+	   	  Person person = new Person();
+	   	  person.setName("hell X13");
+	   	  pdao.savePerson(person);
+	   	  
+	   	for (int i = 0; i < 2	; i++) {
+	   		for(Person person2: pdao.findByAll()){
+		  			System.out.println(person2.getName());
+		  		}
+	   		System.out.println("---------------------------");
+	   	  }
+	   	 
+	   	 
+	   	 
 	    }
 }

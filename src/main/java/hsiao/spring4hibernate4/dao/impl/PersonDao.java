@@ -6,7 +6,7 @@ import hsiao.spring4hibernate4.entity.Person;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.transaction.annotation.Propagation;
@@ -19,12 +19,12 @@ public class PersonDao implements IPersonDao{
 		
 		@Override
 		@Transactional(propagation=Propagation.REQUIRED)
-		@CachePut("persons")
+		@CacheEvict(value="persons", allEntries=true) // allEntries=true ,  clear cache all entries 
 		public void savePerson(Person person){
 			hibernateTemplate.save(person);
 		}
 		@Override
-		@Cacheable("persons")
+		@Cacheable(value="persons")
 		@Transactional(readOnly=true)
 		public Person findByID(Integer id) {
 			List persons =hibernateTemplate.find("from Person p where p.id=?", new Object[]{id});
@@ -35,7 +35,7 @@ public class PersonDao implements IPersonDao{
 			}
 		}
 		@Override
-		@Cacheable("persons")
+		@Cacheable(value="persons")
 		@Transactional(readOnly=true)
 		public List<Person> findByAll() {
 			return (List<Person>) hibernateTemplate.find("from Person p ", null);
