@@ -22,10 +22,16 @@ public class App{
 //   	  pdao.savePerson(person);
    	  
    	  
-   	  	Person person = pdao.findByID(1);
-   		System.out.println(person.getId());
-   	  	System.out.println(person.getName());
-   	  
-   	  
-    }
+//   	  	Person person = pdao.findByID(1);
+//   		System.out.println(person.getId());
+//   	  	System.out.println(person.getName());
+   	  	
+	   	  for (int i = 0; i < 2	; i++) {
+	   		for(Person person: pdao.findByAll()){
+		  			System.out.println(person.getName());
+		  		}
+	   		System.out.println("---------------------------");
+	   	  }
+	   	  
+	    }
 }
